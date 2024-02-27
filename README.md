@@ -2,8 +2,7 @@
 
 ## cómo correr la app
 Este repositorio contiene lo necesario para levantar un api y consultar qué hace Promptior y cuándo fue fundada. 
-Para poder correr correctamente el servicio, hay que agregar un .env que contenga la api key de open ai en un archivo llamado .env  El nombre de la variable debe ser: OPENAI_API_KEY. A modo de ejemplo, el archivo .env contendría lo siguiente: OPENAI_API_KEY="dummy-key-para-probar-esto"
-Una vez creado el archivo .env, se deben ejecutar los comandos de "docker build . " y "docker run $id-de-la-imagen-anterior".
+Para poder correr correctamente el servicio, hay que clonar el repositorio y luego agregar un archivo llamado .env que contenga la api key de open ai en. El nombre de la variable debe ser: OPENAI_API_KEY. A modo de ejemplo, el archivo .env contendría lo siguiente: OPENAI_API_KEY="dummy-key-para-probar-esto". Una vez creado el archivo .env, se deben ejecutar los comandos de "docker build . " y "docker run".
 
 ## descripción general del proyecto
 El proyecto procura desplegar un bot en una api en la cual el usuario pueda realizarle preguntas sobre la empresa Promptior. 
