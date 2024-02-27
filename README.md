@@ -17,7 +17,7 @@ Básicamente, para desarrollar esta app se realizó un despliegue local. Una vez
 
 ## diagrama de componentes
 
-![](https:https://github.com/rgg1993/promptior-ai-challenge-rgg/diagram.png)
+![diagrama de componentes](https://github.com/rgg1993/promptior-ai-challenge-rgg/blob/main/diagram.png)
 
 # importante
 No se recomienda el manejo de archivos .env dentro de docker. 
