@@ -1,28 +1,31 @@
 # promptior-ai-challenge-rgg
 
-## cómo correr la app
-Este repositorio contiene lo necesario para levantar un api y consultar qué hace Promptior y cuándo fue fundada. 
-Para poder correr correctamente el servicio, hay que clonar el repositorio y luego agregar un archivo llamado .env que contenga la api key de open ai. El nombre de la variable en el archivo .env debe ser: OPENAI_API_KEY. A modo de ejemplo, el archivo .env contendría lo siguiente: OPENAI_API_KEY="dummy-key-para-probar-esto". Una vez creado el archivo .env, se deben ejecutar los comandos de "docker build . " y "docker run".
+## Cómo correr la aplicación
+Este repositorio contiene los archivos necesarios para levantar una API que permite consultar información sobre Promptior, incluyendo su descripción y fecha de fundación. Para ejecutar el servicio correctamente, sigue estos pasos:
 
-## descripción general del proyecto
-El proyecto procura desplegar un bot en una api en la cual el usuario pueda realizarle preguntas sobre la empresa Promptior. 
-Aún asi, se puede adaptar y hacer que responda preguntas sobre cualquier otra web, siempre y cuando se modifique el código del archivo retrieve_web_page_contents.py. Es un proyecto en su versión beta, por lo cual no se recomienda utilizar el código aquí presente para desplegar en ambientes productivos sin previa validación. 
+1. Clona el repositorio en tu máquina local.
+2. Crea un archivo llamado `.env` en la raíz del proyecto y agrega la API Key de OpenAI. La variable en el archivo `.env` debe llamarse `OPENAI_API_KEY`. Por ejemplo: `OPENAI_API_KEY="dummy-key-para-probar-esto"`
+3. Una vez creado el archivo `.env`, ejecuta los siguientes comandos en la terminal:
 
-## proceso de resolución
-Básicamente, para desarrollar esta app se realizó un despliegue local. Una vez resueltas las principales dificultades, se procedió a su dockerización. La dockerización se hizo mediante pruebas en una ec2 en AWS. Dentro de las dificultades principales, destacaron:
+'''
+docker build -t promptior-ai-challenge .
+docker run -d -p 80:8000 promptior-ai-challenge
+'''
 
-- familiarización con nuevas tecnologías  (primvera vez trabajando con langchain y selenium)
-- despliegue en ubuntu: acá importante considerar que es requerido python3.10 o superior (para instalar las dependencias de langchain), tener Chrome y su correspondiente webdriver instalados (los cuales deben tener versiones compatibles), asegurarse que todas las librerías y paquetes requeridos estén dispnibles
-- lectura del sitio de Pomptior, ya que la web carga el html a través de un script js que obliga a la interacción para poder traer los html
-- instalación de dependencias en el Dockerfile 
+## Descripción general del proyecto
+El proyecto consiste en desplegar un bot en una API que permite a los usuarios hacer preguntas sobre la empresa Promptior. Si bien está diseñado específicamente para Promptior, el código puede ser modificado para que responda preguntas sobre cualquier otro tema. Es importante tener en cuenta que este proyecto se encuentra en versión beta, por lo que no se recomienda su uso en entornos de producción sin una validación previa.
+
+## Proceso de resolución
+El desarrollo de esta aplicación comenzó con una implementación local. Una vez resueltas las principales dificultades, se procedió a su dockerización. Las principales dificultades encontradas fueron:
+
+- Familiarización con nuevas tecnologías (primera vez trabajando con langchain y selenium).
+- Despliegue en Ubuntu: se requiere Python 3.10 o superior (para instalar las dependencias de langchain), Chrome y su correspondiente WebDriver instalados, así como asegurarse de que todas las librerías y paquetes necesarios estén disponibles.
+- Lectura del sitio de Promptior, ya que la web carga el HTML a través de un script JS que requiere interacción para poder traer los datos.
+- Instalación de dependencias en el Dockerfile.
 
 ## diagrama de componentes
 
 ![diagrama de componentes](https://github.com/rgg1993/promptior-ai-challenge-rgg/blob/main/diagram.png)
 
-# importante
-No se recomienda el manejo de archivos .env dentro de docker. 
-La solución aquí presentada es una prueba de desarrollo. 
-
-
-
+# Importante
+No se recomienda manejar archivos `.env` dentro de Docker. Esta solución es únicamente para fines de desarrollo y pruebas.
